@@ -4,6 +4,8 @@ import { FilterBar } from "./components/FilterBar"
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
+import { getProductList } from "../../services";
+import { toast } from "react-toastify";
 
 
 export const ProductsList = () => {  
@@ -17,13 +19,16 @@ export const ProductsList = () => {
   useEffect(() => {
     console.log('INSIDE USEEFFECT')
     async function fetchProducts() {
-      const response = await fetch(`http://localhost:8000/products?name_like=${searchTerm ? searchTerm : ""}`);
-      const data = await response.json();
-      // setProducts(data);
-      initialProductList(data);
+      try{
+        const data = await getProductList(searchTerm);
+        initialProductList(data);
+      } catch(error){
+        //! PROVIDE FROM PRODUCT SERVICE
+        toast.error(error.message, { closeButton: true, position: "bottom-center", autoClose: 5000, closeOnClick: true});
+      }
     }
     fetchProducts();
-  }, [searchTerm])
+  }, [searchTerm]); //eslint-disable-line
   return (
     <main>
       <section className="my-5">

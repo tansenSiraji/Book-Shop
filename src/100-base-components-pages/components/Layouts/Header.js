@@ -4,8 +4,8 @@ export const Header = () => {
         <nav class="bg-white dark:bg-gray-900">
             <div class="border-b border-slate-200 dark:border-b-0 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-3">
                 <a href="/" class="flex items-center">
-                    <img src="Logo" class="mr-3 h-10" alt="CodeBook Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CodeBook</span>
+                    <img src="Logo" class="mr-3 h-10" alt="BookShop Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BookShop</span>
                 </a>
                 <div class="flex items-center relative">
                     <span class="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-gear-wide-connected"></span>
