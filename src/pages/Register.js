@@ -18,7 +18,6 @@ export const Register = () => {
       }
 
       const data = await register(authDetail);
-      console.log(data.accessToken, 'ACCESS TOKEN')
       data.accessToken ? navigate("/products") : toast.error(data);
     } catch (error) {
       toast.error(error.message, { closeButton: true, position: "bottom-center", autoClose: 5000, closeOnClick: true });

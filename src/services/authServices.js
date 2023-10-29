@@ -28,7 +28,6 @@ export async function register(authDetail) {
 
   const response = await fetch(`${process.env.REACT_APP_HOST}/register`, requestOptions);
   const data = await response.json();
-  console.log(data)
 
   if (data.accessToken) {
     sessionStorage.setItem("token", JSON.stringify(data.accessToken));

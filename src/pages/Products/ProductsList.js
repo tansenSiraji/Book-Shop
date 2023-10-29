@@ -17,7 +17,6 @@ export const ProductsList = () => {
   useTitle("Explore eBooks Collection");
 
   useEffect(() => {
-    console.log('INSIDE USEEFFECT')
     async function fetchProducts() {
       try{
         const data = await getProductList(searchTerm);

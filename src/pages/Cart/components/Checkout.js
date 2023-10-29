@@ -24,7 +24,6 @@ export const Checkout = ({ setCheckout }) => {
         fetchdata();
     }, []);
 
-    console.log('HOLA', user)
     async function handleOrderSubmit(e) {
         e.preventDefault();
 
