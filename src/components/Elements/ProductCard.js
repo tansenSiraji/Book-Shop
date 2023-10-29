@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export const ProductCard = ({ product }) => {
     const { cartList, addToCart, removeFromCart } = useCart();
     const [inCart, setInCart] = useState(false);
-    const { id, name, overview, price, rating, image_local, poster, long_description, best_seller } = product;
+    const { id, name, overview, price, rating, poster, best_seller } = product;
     console.log(cartList.some(item => item.id === product.id))
     
 
@@ -20,7 +20,7 @@ export const ProductCard = ({ product }) => {
         <div className="m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <Link to={`/products/${id}`} className="relative" >
                 {best_seller && <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">Best Seller</span>}
-                <img className="rounded-t-lg w-full h-64" src={image_local} alt={name} />
+                <img className="rounded-t-lg w-full h-64" src={poster} alt={name} />
             </Link>
             <div className="p-5">
                 <Link to={`/products/${id}`} >
