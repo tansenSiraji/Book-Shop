@@ -7,7 +7,6 @@ export const ProductCard = ({ product }) => {
     const { cartList, addToCart, removeFromCart } = useCart();
     const [inCart, setInCart] = useState(false);
     const { id, name, overview, price, rating, poster, best_seller } = product;
-    console.log(cartList.some(item => item.id === product.id))
     
 
     useEffect(() => {
