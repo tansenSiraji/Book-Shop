@@ -15,7 +15,6 @@ export const CartProvider = ({children}) => {
     function addToCart(product){
         const updatedList = state.cartList.concat(product);
         const updatedTotal = state.total + product.price;
-        console.log(updatedList, updatedTotal)
 
         dispatch({
             type: "ADD_TO_CART",
